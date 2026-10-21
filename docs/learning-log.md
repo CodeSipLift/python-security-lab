@@ -11,3 +11,8 @@ Created a Python command-line utility that resolves a hostname to an IPv4 addres
 - How to use `argparse` to accept command-line arguments.
 - How to test success, failure, and missing-input cases.
 - How to review changes with `git diff` before committing.
+- How to use dictionaries to organize results as key-value pairs.
+- How to convert dictionaries into JSON with `json.dumps()`.
+- Why structured output makes the results easier for other programs to process.
+- How to use the exit codes to signal success (`0`) or failure (`1`).
+- How to check exit codes in Windows CMD using `echo %ERRORLEVEL%`.
