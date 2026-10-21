@@ -1,6 +1,11 @@
 import socket
+import argparse
 
-hostname = input("Enter a hostname: ")
+parser = argparse.ArgumentParser(description="Resolve a hostname to an IP address.")
+parser.add_argument("hostname", help="Hostname to resolve.")
+args = parser.parse_args()
+
+hostname = args.hostname
 
 try:
     ip_address = socket.gethostbyname(hostname)
