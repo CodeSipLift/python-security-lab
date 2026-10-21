@@ -1,5 +1,7 @@
 import socket
 import argparse
+import json
+import sys
 
 parser = argparse.ArgumentParser(description="Resolve a hostname to an IP address.")
 parser.add_argument("hostname", help="Hostname to resolve.")
@@ -10,8 +12,16 @@ hostname = args.hostname
 try:
     ip_address = socket.gethostbyname(hostname)
 except socket.gaierror:
-    print("Error: Unable to resolve hostname.")
+    result = {
+        "hostname": hostname,
+        "error": "unable to resolve hostname."
+    }
+    print(json.dumps(result, indent=4))
+    sys.exit(1)
 else:
-    print(f"Target: {hostname}")
-    print(f"IP Address: {ip_address}")
+    result = {
+        "hostname": hostname,
+        "ip_address": ip_address
+    }
+    print(json.dumps(result, indent=4))
     
